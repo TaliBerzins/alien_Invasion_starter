@@ -8,7 +8,7 @@ if TYPE_CHECKING:
 class Alien(Sprite):
      def __init__(self, fleet: 'AlienFleet', x: float, y: float):
           super().__init__()
-          self.fleet.game = fleet.game
+          
           self.screen = fleet.game.screen
           self.boundaries = fleet.game.screen.get_rect()
           self.settings = fleet.game.settings
