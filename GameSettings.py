@@ -10,22 +10,21 @@ class Settings:
         self.ship_file = Path.cwd()/'Assets'/'images'/'ship2(no bg).png'
         self.ship_w = 40
         self.ship_h = 80
-        self.starting_ship_count = 1
+        self.difficulty_scale = 1.1
+        
 
         self.bullet_file = Path.cwd()/'Assets'/'images'/ 'laserBlast.png'
         self.laser_sound = Path.cwd()/'Assets'/'sound'/ 'laser.mp3'
         self.impact_sound = Path.cwd()/'Assets'/'sound'/ 'impactSound.mp3'
-        self.bullet_speed = 7
-        self.bullet_w = 25
-        self.bullet_h = 80
-        self.bullet_amount = 5
+
+
 
         self.alien_file = Path.cwd() / 'Assets' / 'images' / 'enemy_4.png'
-        self.fleet_speed = 1
+       
         self.alien_w = 40
         self.alien_h = 40
-        self.fleet_direction = 3
-        self.fleet_drop_speed = 40
+        self.fleet_direction = 1
+      
 
         self.button_w = 200
         self.button_h = 50
@@ -35,3 +34,18 @@ class Settings:
         self.button_font_size = 48
         self.HUD_font_size = 20
         self.font_file = Path.cwd() / 'Assets' / 'Fonts' / 'Silkscreen' / 'Silkscreen-Bold.ttf'
+
+    def initialize_dyanmic_settings(self):
+          self.bullet_speed = 7
+          self.starting_ship_count = 1
+          self.fleet_speed = 1
+          self.fleet_drop_speed = 40
+          self.bullet_w = 25
+          self.bullet_h = 80
+          self.bullet_amount = 5
+
+
+    def increase_difficulty(self):
+         self.ship_speed *= self.difficulty_scale
+         self.bullet_speed *= self.difficulty_scale
+         self.fleet_speed *= self.difficulty_scale
