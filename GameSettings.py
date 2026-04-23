@@ -11,6 +11,7 @@ class Settings:
         self.ship_w = 40
         self.ship_h = 80
         self.difficulty_scale = 1.1
+        self.scores_file = Path.cwd() / 'Assets' / 'file' / 'scores.json'
         
 
         self.bullet_file = Path.cwd()/'Assets'/'images'/ 'laserBlast.png'
@@ -34,7 +35,7 @@ class Settings:
         self.button_font_size = 48
         self.HUD_font_size = 20
         self.font_file = Path.cwd() / 'Assets' / 'Fonts' / 'Silkscreen' / 'Silkscreen-Bold.ttf'
-
+        
     def initialize_dyanmic_settings(self):
           self.bullet_speed = 10
           self.starting_ship_count = 1
